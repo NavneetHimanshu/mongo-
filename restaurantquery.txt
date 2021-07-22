@@ -1,0 +1,19 @@
+Q1-db.restaurants.find();
+Q2-db.restaurants.find({},{"restaurant_id" :
+   1,"name":1,"borough":1,"cuisine" :1});
+Q3-db.restaurants.find({},{"restaurant_id" :    1,"name":1,"borough":1,"cuisine" :1,"_id":0});
+Q4-db.restaurants.find({},{"restaurant_id" :    1,"name":1,"borough":1,"address.zipcode" :1,"_id":0});
+Q5-db.restaurants.find({},{"restaurant_id" :    1,"name":1,"borough":1,"address.zipcode" :1,"_id":0});
+Q6-db.restaurants.find({"borough": "Bronx"}).limit(5);
+Q7-db.restaurants.find({"borough": "Bronx"}).skip(5).limit(5);
+Q8-db.restaurants.find({grades : { $elemMatch:{"score":{$gt : 90}}}});
+Q9-db.restaurants.find({grades : { $elemMatch:{"score":{$gt : 80 , $lt    :100}}}});
+Q10-db.restaurants.find({"address.coord" : {$lt : -95.754168}});
+Q11-db.restaurants.find({"cuisine" : {$ne : "American "},"grades.score" :    {$gt: 70},"address.coord" : {$lt : -65.754168}});
+
+Q12-db.restaurants.find({"cuisine" : {$ne : "American "},"grades.score" :         {$gt: 70},"address.coord" : {$lt : -65.754168}});
+Q13-db.restaurants.find( {"cuisine" : {$ne : "American "},"grades.grade"     :"A","borough": {$ne : "Brooklyn"}} ).sort({"cuisine":-1});
+Q14-db.restaurants.find({name: /^Wil/},{"restaurant_id" :     1,"name":1,"borough":1,"cuisine" :1});
+Q15-db.restaurants.find({name: /ces$/},{"restaurant_id" :     1,"name":1,"borough":1,"cuisine" :1});
+
+
